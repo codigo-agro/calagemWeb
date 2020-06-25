@@ -6,6 +6,29 @@ img {
     margin-right: auto;
 }
 
+a {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a[role="button"]{
+    background: white;
+    border-color: white;
+    color: #4e2306;
+}
+
+a:hover[role="button"]{
+    background: #4e2306;
+    border-color: white;
+    color: white;
+}
+
+a:after[role="button"]{
+    background: #4e2306;
+    border-color: white;
+    color: white;
+}
 
 head {
     background-color: #4e2306;
@@ -19,12 +42,6 @@ label {
   color: white;
   padding: 8px;
   font-family: cambria;
-}
-
-h1 {
-  font-family: cambria;
-  color: white;
-  padding: 8px;
 }
 
 p.lead {
@@ -53,16 +70,18 @@ input:hover[type="submit"]{
     border-color: white;
 }
 
-h2 {
+h3 {
     font-family: cambria;
     color: white;
 }
 
-h3 {
+h2 {
     font-family: cambria;
     color: black;
 }
 
 h1 {
-    color: #4e2306
+    color: #4e2306;
+    font-family: cambria;
 }
+

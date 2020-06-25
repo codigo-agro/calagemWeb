@@ -20,172 +20,44 @@
         <div class="container" align="center">
           <div class="col" >
             <div class="row" >
-              <a class="nav-brand" href="/" ><img id="logo-codigoagro" class="center" src="/static/images/logo_footer.png" ></a>
+              <a class="nav-brand" href="/home" ><img id="logo-codigoagro" class="center" src="/static/images/logo_footer.png" ></a>
             </div>
 
           </div>
-
 
         </div>
 
     </nav>
 
-    <div class="row mt-3"></div>
-
     <div class ="jumbotrom text-center apresentacao" >
       <div class="container">
 
-        <h2>Sistema de Recomendação de Calagem</h2>
-        <h2>Método da Saturação por Bases</h2>
-        <p class="lead">Para calcular a quantidade de calcário necessária para o seu projeto preencha os campos abaixo</p>
+        <h3>Cálculo de Necessidade de Calagem</h3>
+
+           <div class="row mt-5"></div>
+
+        <h3>Escolha um dos métodos abaixo</h3>
+
+        <div class="row mt-5"></div>
+
       </div>
     </div>
 
-  <div>
 
-    <div class="container" align="center">
-      <form action="{{ url_for('send_data') }}" id = "entrada-dados" method="POST">
+    <center>
+      <div class="container">
+        <div class="row" >
+            <a href="/page01" class="btn btn-info" role="button" >Saturação por Bases </a>
+        </div>
 
-        <div class="row mt-3"></div>
-        <div class="row mt-3"></div>
+        <div class="row mt-5"></div>
 
         <div class="row" >
-          <div class="col" >
-            <div class="col-md-7">
-              <label>Teor de Cálcio (cmolc/dm³)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="calcio">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-3"></div>
-
-        <div class="row">
-          <div class="col">
-            <div class="col-md-7">
-              <label>Teor de Magnésio (cmolc/dm³)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="magnesio">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-3"></div>
-
-        <div class="row">
-          <div class="col">
-            <div class="col-md-7">
-              <label>Teor de Potássio (mg/dm³)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="potassio">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-3"></div>
-
-        <div class="row">
-          <div class="col">
-            <div class="col-md-7">
-              <label>Teor de Sódio (mg/dm³)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="sodio">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-3"></div>
-
-        <div class="row">
-          <div class="col">
-            <div class="col-md-7">
-              <label>Teor de H+Al (cmolc/dm³)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="hidrogenio-mais-aluminio">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-3"></div>
-
-        <div class="row">
-          <div class="col">
-            <div class="col-md-7">
-              <label>Saturação por bases (V1) (%)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="saturacao-por-bases">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-3"></div>
-
-        <div class="row">
-          <div class="col">
-            <div class="col-md-7">
-              <label>Camada de solo (cm)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="camada-de-solo">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-5"></div>
-
-        <input type="submit" class="btn btn-primary" value="Calcular">
-
-        <div class="row mt-5"></div>
-
-
-      </form>
-
-      {% if prognostico_de_calagem != null %}
-      <div class="jumbotron text-center resultado">
-        <div class="container">
-          <h3> Prognóstico de Recomendação </h3>
-          <h1>{{ prognostico_de_calagem }}</h1>
+              <a href="/page02" class="btn btn-info" role="button">Elevação do Ca+Mg e Neutralização do Al</a>
         </div>
       </div>
-      {% endif %}
+    </center>
 
 
-    </div>
-
-  </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>
 </html>
