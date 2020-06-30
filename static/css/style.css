@@ -48,6 +48,17 @@ p.lead {
   font-family: cambria;
   color: white;
   padding: 8px;
+  align= right;
+}
+
+caption {
+    font color= white;
+    font-family: cambria;
+}
+
+
+table.tabelanc{
+    border-color: white;
 }
 
 input {
@@ -85,3 +96,11 @@ h1 {
     font-family: cambria;
 }
 
+hr.style1{
+	border-top: 1px solid white;
+	width: 50%;
+}
+
+div.row{
+    align-items: center;
+}

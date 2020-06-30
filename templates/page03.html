@@ -11,8 +11,9 @@
       <!-- CSS Customizado -->
     <link rel="stylesheet" href="/static/css/style.css">
 
-    <title>Calgem Web</title>
+    <title>Calagem Web</title>
     <link rel="shortcut icon" href="/static/images/favicon.png">
+
   </head>
   <body>
 
@@ -25,7 +26,6 @@
             </div>
 
           </div>
-
 
         </div>
 
@@ -44,8 +44,8 @@
 
         <div class="row mt-5"></div>
 
-        <h3>Método da Saturação por Bases</h3>
-        <h3>NC (t/ha) = (V2 - V1) * CTC</h3>
+        <h3>Neutralização do Alúminio e Elevação do Ca + Mg (Alvarez V. e Ribeiro, 1999)</h3>
+        <h3>NC (t/ha) = Y * [Al<sup>3+</sup> - (m<sub>t</sub> * t/100)] + [X - (Ca<sup>2+</sup>+Mg<sup>2+</sup>)] </h3>
 
         <div class="row mt-5"></div>
 
@@ -59,12 +59,10 @@
       </div>
     </div>
 
-
-
   <div>
 
     <div class="container" align="center">
-      <form action="{{ url_for('send_data') }}" id = "entrada-dados-sb" method="POST">
+      <form action="{{ url_for('page_alm') }}" id = "entrada-dados-alm" method="POST">
 
         <div class="row mt-3"></div>
         <div class="row mt-3"></div>
@@ -131,18 +129,36 @@
           </div>
         </div>
 
+
         <div class="row mt-3"></div>
 
         <div class="row">
           <div class="col">
             <div class="col-md-7">
-              <label>Teor de H+Al (cmol<sub>c</sub>/dm³)</label>
+              <label>Teor de Alúminio (cmol<sub>c</sub>/dm³)</label>
             </div>
           </div>
 
           <div class="col">
             <div class="col-md-2">
-              <input type="text" class="form-control" name="hidrogenio-mais-aluminio">
+              <input type="text" class="form-control" name="aluminio">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3"></div>
+
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
+              <label>m<sub>t</sub> (%)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="maxima-sat-aluminio">
             </div>
           </div>
         </div>
@@ -152,18 +168,52 @@
         <div class="row">
           <div class="col">
             <div class="col-md-7">
-              <label>Saturação por bases (V<sub>2</sub>) (%)</label>
+              <label>X (cmol<sub>c</sub>/dm³)</label>
             </div>
           </div>
 
           <div class="col">
             <div class="col-md-2">
-              <input type="text" class="form-control" name="saturacao-por-bases">
+              <input type="text" class="form-control" name="chis">
             </div>
           </div>
         </div>
 
         <div class="row mt-5"></div>
+
+        <p class="lead">Por ultimo preencha um dos campos abaixo para estimar o valor de "Y" e clique em calcular</p>
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
+              <label>Argila (%)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="argila">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
+              <label>P-remanescente (mg/dm³)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="prem">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3"></div>
 
         <input type="submit" class="btn btn-primary" value="Calcular">
 
@@ -172,11 +222,11 @@
 
       </form>
 
-      {% if resultado_sb != null %}
+      {% if resultado_alm != null %}
       <div class="jumbotron text-center resultado">
         <div class="container">
           <h2> Resultado da Necessidade de Calagem </h2>
-          <h1>{{ resultado_sb }}</h1>
+          <h1>{{ resultado_alm }}</h1>
           <h2>{{ complemento }}</h2>
         </div>
       </div>
@@ -212,5 +262,6 @@
     </div>
 
   <div class="row mt-5"></div>
+</footer>
 
 </html>

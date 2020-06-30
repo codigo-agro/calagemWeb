@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+      <!-- CSS Customizado -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Calagem Web</title>
+    <link rel="shortcut icon" href="/static/images/favicon.png">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4e2306;">
+
+        <div class="container" align="center">
+          <div class="col" >
+            <div class="row" >
+              <a class="nav-brand" href="/home" ><img class="center" src="/static/images/favicon.png" ></a>
+            </div>
+
+          </div>
+
+        </div>
+
+    </nav>
+
+    <div class="row mt-3"></div>
+
+    <div class ="jumbotrom text-center apresentacao" >
+      <div class="container">
+
+        <h3>Calagem Web<a name="topo"></a></h3>
+
+        <div class="row mt-5"></div>
+
+        <center>
+          <div class="container">
+            <div class="row" >
+                  <a href="/home" class="btn btn-info" role="button">Escolher método de cálculo</a>
+            </div>
+            <div class="row mt-5"></div>
+          </div>
+        </center>
+
+        <div class="row mt-2"></div>
+
+        <h3>Tabela de dados úteis</h3>
+
+        <div class="row mt-5"></div>
+
+      </div>
+    </div>
+
+    <div class ="jumbotrom text-center apresentacao" >
+      <div class="container">
+        <p class="lead" align="center">m<sub>t</sub> = Saturação máxima por Al tolerada</p>
+        <p class="lead" align="center">X = Disponibilidade de Ca e Mg requerida pela cultura</p>
+        <p class="lead" align="center">V<sub>2</sub> = Disponibilidade de Ca e Mg requerida pela cultura</p>
+      </div>
+    </div>
+
+<center>
+<table border=3 bgcolor="white" width=600 align=center>
+    <caption><font color= white>Adaptado de Alvarez V. & Ribeiro (1999)</font></caption>
+    <tr>
+        <th><font color= black>Cultura</font></th>
+        <th><font color= black>m<sub>t</sub> (%)</font></th>
+        <th><font color= black>X</font> (cmol<sub>c</sub>/dm³)</th>
+        <th><font color= black>V<sub>2</sub> (%)</font></th>
+    </tr>
+
+    <tr>
+        <th><font color= black >Cereais</font></th>
+        <td style="width:100px"><font color= black></font></td>
+        <td style="width:150px"><font color= black></font></td>
+        <td style="width:100px"><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Arroz sequeiro</font></td>
+        <td><font color= black>25</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Arroz irrigado</font></td>
+        <td><font color= black>25</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Milho e Sorgo</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Trigo (sequeiro ou irrigado)</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Leguminosas</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Feijão, soja e adubos verdes</font></td>
+        <td><font color= black>20</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Outras leguminosas</font></td>
+        <td><font color= black>20</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Plantas fibrosas</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Algodão</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>2,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Crotalárea-juncea</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Fórmio</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Rami</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,5</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Sisal</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Plantas industriais</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Café</font></td>
+        <td><font color= black>25</font></td>
+        <td><font color= black>3,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Cana-de-açúcar</font></td>
+        <td><font color= black>30</font></td>
+        <td><font color= black>3,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Chá</font></td>
+        <td><font color= black>25</font></td>
+        <td><font color= black>1,5</font></td>
+        <td><font color= black>40</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Raízes e Tubérculos</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Batata e batata-doce</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Mandioca</font></td>
+        <td><font color= black>30</font></td>
+        <td><font color= black>1,0</font></td>
+        <td><font color= black>40</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Cará e inhame</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>2,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Plantas Tropicais</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Cacau</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Seringueira</font></td>
+        <td><font color= black>25</font></td>
+        <td><font color= black>1,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Pimenta-do-reino</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Hortaliças</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Chuchu e melão</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,5</font></td>
+        <td><font color= black>80</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Abóbora, moranga, pepino, melancia, alface, almeirão e acelga</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Chicória e escarola</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Milho verde</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>2,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Tomate, pimentão, pimenta, beringela e jiló</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Beterraba, cenoura, mandioquinha, nabo e rabanete</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>65</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Repolho, couve-flor, brócolos e couve</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Alho e cebola</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Quiabo, ervilha, feijão de vagem e morango</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Fruteiras de Clima Tropical</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Abacaxizeiro</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Banana</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Citros</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Mamoeiro</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,5</font></td>
+        <td><font color= black>80</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Abacateiro e mangueira</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>2,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Maracujazeiro e goiabeira</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Fruteiras de Clima Temperado</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Ameixa, nêspera, pêssego, nectarina, figo, maçã, marmelo, pêra, caqui, macadâmia e pecã</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Videira</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,5</font></td>
+        <td><font color= black>80</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Plantas Aromáticas e, ou, Medicinais</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Fumo</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Gramíneas aromáticas (capim-limão, citronela e palmarosa)</font></td>
+        <td><font color= black>25</font></td>
+        <td><font color= black>1,5</font></td>
+        <td><font color= black>40</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Menta</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>2,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Piretro</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>2,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Vetiver</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>2,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Camomila</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Eucalipto</font></td>
+        <td><font color= black>30</font></td>
+        <td><font color= black>1,5</font></td>
+        <td><font color= black>40</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Funcho</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Plantas Ornamentais</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Herbáceas</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>2,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Arbustivas</font></td>
+        <td><font color= black>10</font></td>
+        <td><font color= black>1,0</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Arbóreas</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Azálea</font></td>
+        <td><font color= black>20</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Cravo</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Gladíolos</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Roseira</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Crisântemo</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>d>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Gramados</font></td>
+        <td><font color= black>5</font></td>
+        <td><font color= black>3,0</font></td>
+        <td><font color= black>70</font></td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Plantios de Eucalipto</font></th>
+        <td><font color= black></font>45</td>
+        <td><font color= black></font>1,0</td>
+        <td><font color= black></font>30</td>
+    </tr>
+
+    <tr>
+        <th><font color= black >Pastagens</font></th>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black > <i>Leguminosas:</i></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Leucena (<i>Leucaena leucocephala</i>); Soja-perene (<i>Neonotonia wightii</i>); Alfafa (<i>Medicago sativa</i>) e Siratro (<i>Macroptilium atropurpureum</i>)</font></td>
+        <td><font color= black>15</font></td>
+        <td><font color= black>2,5</font></td>
+        <td><font color= black>60</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Kudzú (<i>Pueraria phaseoloides</i>); Calopogônio (<i>Calopogonio mucunoides</i>); Estilosantes (<i>Stylosanthes guianensis</i>); Guandu (<i>Cajanus cajan</i>); Centrosema (<i>Centrosema pubescens</i>); Arachis ou Amendoin forrageiro (<i>Arachis pintoi</i>) e, Galáxia (<i>Galactia striata</i>)</font></td>
+        <td><font color= black>25</font></td>
+        <td><font color= black>1,0</font></td>
+        <td><font color= black>40</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black ><i>Gramíneas:</i></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+        <td><font color= black></font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Grupo do Capim Elefante: Cameron, Napier, Pennisetum hibrido (<i>Pennisetum purpureum</i>); Coast-cross, Tiftons (<i>Cynodon</i>); Colonião, Vencedor, Centenário, Tobiatã (<i>Panicum maximum</i>); Quicuio (<i>Pennisetum clandestinum</i>) e, Pangola, Transvala (<i>Digitaria decumbens</i>)</font></td>
+        <td><font color= black>20</font></td>
+        <td><font color= black>2,0</font></td>
+        <td><font color= black>50</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Green-panico, Tanzânia, Mombaça (<i>Panicum maximum</i>); Braquiarão ou Marandú (<i>Brachiaria brizantha</i>); Estrelas (<i>Cynodon plectostachyus</i>) e, Jaraguá (<i>Hyparrrenia rufa</i>)</font></td>
+        <td><font color= black>25</font></td>
+        <td><font color= black>1,5</font></td>
+        <td><font color= black>45</font></td>
+    </tr>
+
+    <tr>
+        <td><font color= black>Braquiaria IPEAN, Braquiaria australiana (<i>Brachiaria decumbens</i>); Quicuio da Amazônia (<i>Brachiaria humidicola</i>); Andropogon (<i>Andropogon guianensis</i>); Gordura (<i>Melinis minultiflora</i>) e, Grama batatais (<i>Paspalum notatum</i>)</font></td>
+        <td><font color= black>30</font></td>
+        <td><font color= black>1,0</font></td>
+        <td><font color= black>40</font></td>
+    </tr>
+
+</table>
+</center>
+
+    <div class="row mt-5"></div>
+
+</body>
+<hr class="style1">
+<footer>
+    <div class="row mt-5"></div>
+
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col">
+        <a class="nav-brand" href="http://codigoagro.com/" target="_blank" ><img class="center" src="/static/images/codigoagro.png" style="width:100%"></a>
+      </div>
+      <center>
+          <div class="col">
+            <a href="#topo" class="btn btn-info" role="button">Voltar ao topo</a>
+          </div>
+      </center>
+      <div class="col">
+        <a class="nav-brand" href="http://daniloas.com/" target="_blank" ><img class="center" src="/static/images/daniloas.png" style="width:50%"></a>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+
+  <div class="row mt-5"></div>
+</footer>
+
+</html>
