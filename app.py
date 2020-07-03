@@ -8,6 +8,14 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 def home():
     return render_template('home.html')
 
+@app.route('/quantidade')
+def quantidade():
+    return render_template('quantidade.html')
+
+@app.route('/necessidade')
+def necessidade():
+    return render_template('necessidade.html')
+
 @app.route('/page01')
 def page01():
     return render_template('page01.html')
