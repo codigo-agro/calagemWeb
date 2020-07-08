@@ -11,7 +11,7 @@
       <!-- CSS Customizado -->
     <link rel="stylesheet" href="/static/css/style.css">
 
-    <title>Calagem Web</title>
+    <title>Calgem Web</title>
     <link rel="shortcut icon" href="/static/images/favicon.png">
   </head>
   <body>
@@ -48,8 +48,8 @@
 
         <div class="row mt-5"></div>
 
-        <h3>Neutralização do Alúminio e Elevação do Ca + Mg (CFSEMG, 1989)</h3>
-        <h3>NC (t/ha) = Y * Al<sup>3+</sup> + [X - (Ca<sup>2+</sup>+Mg<sup>2+</sup>)] </h3>
+        <h3>Método da Saturação por Bases</h3>
+        <h3>NC (t/ha) = (V2 - V1) * CTC</h3>
 
         <div class="row mt-5"></div>
 
@@ -68,7 +68,7 @@
   <div>
 
     <div class="container" align="center">
-      <form action="{{ url_for('page_al') }}" id = "entrada-dados-al" method="POST">
+      <form action="{{ url_for('send_data') }}" id = "entrada-dados-sb" method="POST">
 
         <div class="row mt-3"></div>
         <div class="row mt-3"></div>
@@ -108,13 +108,13 @@
         <div class="row">
           <div class="col">
             <div class="col-md-7">
-              <label>Teor de Alúminio (cmol<sub>c</sub>/dm³)</label>
+              <label>Teor de Potássio (mg/dm³)</label>
             </div>
           </div>
 
           <div class="col">
             <div class="col-md-2">
-              <input type="text" class="form-control" name="aluminio">
+              <input type="text" class="form-control" name="potassio">
             </div>
           </div>
         </div>
@@ -124,67 +124,68 @@
         <div class="row">
           <div class="col">
             <div class="col-md-7">
-              <label>X (cmol<sub>c</sub>/dm³)</label>
+              <label>Teor de Sódio (mg/dm³)</label>
             </div>
           </div>
 
           <div class="col">
             <div class="col-md-2">
-              <input type="text" class="form-control" name="chis">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-5"></div>
-
-        <p class="lead">Por último preencha SOMENTE UM dos campos abaixo para estimar o valor de "Y" e clique em calcular</p>
-
-        <div class="row">
-          <div class="col">
-            <div class="col-md-7">
-              <label>Argila (%)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="argila">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-5"></div>
-
-        <div class="row">
-          <div class="col">
-            <div class="col-md-7">
-              <label>P-remanescente (mg/dm³)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="prem">
+              <input type="text" class="form-control" name="sodio">
             </div>
           </div>
         </div>
 
         <div class="row mt-3"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
+              <label>Teor de H+Al (cmol<sub>c</sub>/dm³)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="hidrogenio-mais-aluminio">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
+              <label>Saturação por bases (V<sub>2</sub>) (%)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="saturacao-por-bases">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5"></div>
 
         <input type="submit" class="btn btn-primary" value="Calcular">
 
         <div class="row mt-5"></div>
 
+
       </form>
 
-      {% if resultado_al != null %}
+      {% if resultado_sb != null %}
       <div class="jumbotron text-center resultado">
         <div class="container">
           <h2>Resultado</h2>
-          <h1>{{ resultado_al }}</h1>
+          <h1>{{ resultado_sb }}</h1>
           <h2>{{ complemento }}</h2>
         </div>
       </div>
+      <a href="/quantidade" class="btn btn-info" role="button">Passo 02 - Quantidade de calcário</a>
+      <div class="row mt-5"></div>
       {% endif %}
 
 

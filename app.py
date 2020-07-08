@@ -36,6 +36,22 @@ def page04():
 def page05():
     return render_template('page05.html')
 
+@app.route('/page06')
+def page06():
+    return render_template('page06.html')
+
+@app.route('/page07')
+def page07():
+    return render_template('page07.html')
+
+@app.route('/page08')
+def page08():
+    return render_template('page08.html')
+
+@app.route('/page09')
+def page09():
+    return render_template('page09.html')
+
 @app.route('/tabela')
 def tabela():
     return render_template('tabela.html')
@@ -78,14 +94,13 @@ def send_data():
         quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
         resultado_sb = str(
-            'Considerando uma aplicação em área total, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
+            'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
             't/ha.')
 
-        complemento = str('O cálculo final da quantidade de calcário ainda deve levar em conta o '
-            'tipo de aplicação - que pode ser em sulco, na projeção da copa da planta, área total ou cova - '
-            ' a profundidade de aplicação e o PRNT do calcário que será utilizado.')
+        complemento = str('O próximo passo é clicar no botão abaixo para calcular a quantidade de calcário segundo o '
+                          'tipo de aplicação e o PRNT do calcário')
 
-        return render_template('page01.html', resultado_sb=resultado_sb, complemento=complemento)
+        return render_template('page01_bt.html', resultado_sb=resultado_sb, complemento=complemento)
 
 @app.route('/page.al', methods = ['POST'])
 def page_al():
@@ -104,37 +119,57 @@ def page_al():
 
     else:
         if prem == '':
-            prem = str('1.0')
+            calcio = calcio.replace(',', '.')
+            magnesio = magnesio.replace(',', '.')
+            aluminio = aluminio.replace(',', '.')
+            argila = argila.replace(',', '.')
+            chis = chis.replace(',', '.')
+
+            calcio = float(calcio)
+            magnesio = float(magnesio)
+            aluminio = float(aluminio)
+            argila = float(argila)
+            chis = float(chis)
+
+            necessidade_de_calagem = str(calcula_al(calcio, magnesio, aluminio, chis, argila, prem))
+
+            quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
+
+            resultado_al = str(
+                'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
+                                                                                                                                                      't/ha.')
+
+            complemento = str(
+                'O próximo passo é clicar no botão abaixo para calcular a quantidade de calcário segundo o '
+                'tipo de aplicação e o PRNT do calcário')
+
+            return render_template('page02_bt.html', resultado_al=resultado_al, complemento=complemento)
+
         elif argila == '':
-            argila = str('1.0')
+            calcio = calcio.replace(',', '.')
+            magnesio = magnesio.replace(',', '.')
+            aluminio = aluminio.replace(',', '.')
+            chis = chis.replace(',', '.')
+            prem = prem.replace(',', '.')
 
-        calcio = calcio.replace(',', '.')
-        magnesio = magnesio.replace(',', '.')
-        aluminio = aluminio.replace(',', '.')
-        argila_n = argila.replace(',', '.')
-        chis = chis.replace(',', '.')
-        prem_n = prem.replace(',', '.')
+            calcio = float(calcio)
+            magnesio = float(magnesio)
+            aluminio = float(aluminio)
+            chis = float(chis)
+            prem = float(prem)
 
-        calcio = float(calcio)
-        magnesio = float(magnesio)
-        aluminio = float(aluminio)
-        argila_n = float(argila_n)
-        chis = float(chis)
-        prem_n = float(prem_n)
+            necessidade_de_calagem = str(calcula_al(calcio, magnesio, aluminio, chis, argila, prem))
 
-        necessidade_de_calagem = str(calcula_al(calcio, magnesio, aluminio, chis, argila_n, prem_n))
+            quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
-        quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
+            resultado_al = str(
+                'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
+                't/ha.')
 
-        resultado_al = str(
-            'Considerando uma aplicação em área total, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
-            't/ha.')
+            complemento = str('O próximo passo é clicar no botão abaixo para calcular a quantidade de calcário segundo o '
+                              'tipo de aplicação e o PRNT do calcário')
 
-        complemento = str('O cálculo final da quantidade de calcário ainda deve levar em conta o '
-                   'tipo de aplicação - que pode ser em sulco, na projeção da copa da planta, área total ou cova - '
-                   ' a profundidade de aplicação e o PRNT do calcário que será utilizado.')
-
-        return render_template('page02.html', resultado_al=resultado_al, complemento=complemento)
+            return render_template('page02_bt.html', resultado_al=resultado_al, complemento=complemento)
 
 @app.route('/page.alm', methods = ['POST'])
 def page_alm():
@@ -157,42 +192,70 @@ def page_alm():
 
     else:
         if prem == '':
-            prem = str('1.0')
+            calcio = calcio.replace(',', '.')
+            magnesio = magnesio.replace(',', '.')
+            potassio = potassio.replace(',', '.')
+            sodio = sodio.replace(',', '.')
+            aluminio = aluminio.replace(',', '.')
+            maxsatu = maxsatu.replace(',', '.')
+            chis = chis.replace(',', '.')
+            argila = argila.replace(',', '.')
+
+            calcio = float(calcio)
+            magnesio = float(magnesio)
+            potassio = float(potassio)
+            sodio = float(sodio)
+            aluminio = float(aluminio)
+            maxsatu = float(maxsatu)
+            chis = float(chis)
+            argila = float(argila)
+
+            necessidade_de_calagem = str(
+                calcula_alm(calcio, magnesio, potassio, sodio, aluminio, maxsatu, chis, argila, prem))
+
+            quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
+
+            resultado_alm = str(
+                'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual '
+                'à ' + quantidade_de_calagem + ' t/ha.')
+
+            complemento = str(
+                'O próximo passo é clicar no botão abaixo para calcular a quantidade de calcário segundo o '
+                'tipo de aplicação e o PRNT do calcário')
+
+            return render_template('page03_bt.html', resultado_alm=resultado_alm, complemento=complemento)
+
         elif argila == '':
-            argila = str('1.0')
-        calcio = calcio.replace(',', '.')
-        magnesio = magnesio.replace(',', '.')
-        potassio = potassio.replace(',', '.')
-        sodio = sodio.replace(',', '.')
-        aluminio = aluminio.replace(',', '.')
-        maxsatu = maxsatu.replace(',', '.')
-        argila_n = argila.replace(',', '.')
-        chis = chis.replace(',', '.')
-        prem_n = prem.replace(',', '.')
+            calcio = calcio.replace(',', '.')
+            magnesio = magnesio.replace(',', '.')
+            potassio = potassio.replace(',', '.')
+            sodio = sodio.replace(',', '.')
+            aluminio = aluminio.replace(',', '.')
+            maxsatu = maxsatu.replace(',', '.')
+            chis = chis.replace(',', '.')
+            prem = prem.replace(',', '.')
 
-        calcio = float(calcio)
-        magnesio = float(magnesio)
-        potassio = float(potassio)
-        sodio = float(sodio)
-        aluminio = float(aluminio)
-        maxsatu = float(maxsatu)
-        argila_n = float(argila_n)
-        chis = float(chis)
-        prem_n = float(prem_n)
+            calcio = float(calcio)
+            magnesio = float(magnesio)
+            potassio = float(potassio)
+            sodio = float(sodio)
+            aluminio = float(aluminio)
+            maxsatu = float(maxsatu)
+            chis = float(chis)
+            prem = float(prem)
 
-        necessidade_de_calagem = str(calcula_alm(calcio, magnesio,potassio, sodio, aluminio, maxsatu, chis, argila_n, prem_n))
+            necessidade_de_calagem = str(calcula_alm(calcio, magnesio,potassio, sodio, aluminio, maxsatu, chis, argila, prem))
 
-        quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
+            quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
-        resultado_alm = str(
-            'Considerando uma aplicação em área total, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
-            't/ha.')
+            resultado_alm = str(
+                'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
+                't/ha.')
 
-        complemento = str('O cálculo final da quantidade de calcário ainda deve levar em conta o '
-                   'tipo de aplicação - que pode ser em sulco, na projeção da copa da planta, área total ou cova - '
-                   ' a profundidade de aplicação e o PRNT do calcário que será utilizado.')
+            complemento = str('O próximo passo é clicar no botão abaixo para calcular a quantidade de calcário segundo o '
+                              'tipo de aplicação e o PRNT do calcário')
 
-        return render_template('page03.html', resultado_alm=resultado_alm, complemento=complemento)
+            return render_template('page03_bt.html', resultado_alm=resultado_alm, complemento=complemento)
 
 
 @app.route('/page.gc', methods = ['POST'])
@@ -219,47 +282,237 @@ def page_gc():
 
     else:
         if prem == '':
-            prem = str('1.0')
+            calcio = calcio.replace(',', '.')
+            magnesio = magnesio.replace(',', '.')
+            potassio = potassio.replace(',', '.')
+            sodio = sodio.replace(',', '.')
+            aluminio = aluminio.replace(',', '.')
+            hidrogeniomaisaluminio = hidrogeniomaisaluminio.replace(',', '.')
+            saturacaoporbases = saturacaoporbases.replace(',', '.')
+            maxsatu = maxsatu.replace(',', '.')
+            argila = argila.replace(',', '.')
+            chis = chis.replace(',', '.')
+
+            calcio = float(calcio)
+            magnesio = float(magnesio)
+            potassio = float(potassio)
+            sodio = float(sodio)
+            aluminio = float(aluminio)
+            hidrogeniomaisaluminio = float(hidrogeniomaisaluminio)
+            saturacaoporbases = float(saturacaoporbases)
+            maxsatu = float(maxsatu)
+            argila = float(argila)
+            chis = float(chis)
+
+            necessidade_de_calagem = str(
+                guarconi_e_sobreira(calcio, magnesio, potassio, sodio, aluminio, hidrogeniomaisaluminio,
+                                    saturacaoporbases, maxsatu, chis, argila, prem))
+
+            quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
+
+            resultado_gc = str(
+                'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
+                                                                                                                                                      't/ha.')
+
+            complemento = str(
+                'O próximo passo é clicar no botão abaixo para calcular a quantidade de calcário segundo o '
+                'tipo de aplicação e o PRNT do calcário')
+
+            return render_template('page04_bt.html', resultado_gc=resultado_gc, complemento=complemento)
+
         elif argila == '':
-            argila = str('1.0')
-        calcio = calcio.replace(',', '.')
-        magnesio = magnesio.replace(',', '.')
-        potassio = potassio.replace(',', '.')
-        sodio = sodio.replace(',', '.')
-        aluminio = aluminio.replace(',', '.')
-        hidrogeniomaisaluminio = hidrogeniomaisaluminio.replace(',', '.')
-        saturacaoporbases = saturacaoporbases.replace(',', '.')
-        maxsatu = maxsatu.replace(',', '.')
-        argila_n = argila.replace(',', '.')
-        chis = chis.replace(',', '.')
-        prem_n = prem.replace(',', '.')
+            calcio = calcio.replace(',', '.')
+            magnesio = magnesio.replace(',', '.')
+            potassio = potassio.replace(',', '.')
+            sodio = sodio.replace(',', '.')
+            aluminio = aluminio.replace(',', '.')
+            hidrogeniomaisaluminio = hidrogeniomaisaluminio.replace(',', '.')
+            saturacaoporbases = saturacaoporbases.replace(',', '.')
+            maxsatu = maxsatu.replace(',', '.')
+            chis = chis.replace(',', '.')
+            prem = prem.replace(',', '.')
 
-        calcio = float(calcio)
-        magnesio = float(magnesio)
-        potassio = float(potassio)
-        sodio = float(sodio)
-        aluminio = float(aluminio)
-        hidrogeniomaisaluminio = float(hidrogeniomaisaluminio)
-        saturacaoporbases = float(saturacaoporbases)
-        maxsatu = float(maxsatu)
-        argila_n = float(argila_n)
-        chis = float(chis)
-        prem_n = float(prem_n)
+            calcio = float(calcio)
+            magnesio = float(magnesio)
+            potassio = float(potassio)
+            sodio = float(sodio)
+            aluminio = float(aluminio)
+            hidrogeniomaisaluminio = float(hidrogeniomaisaluminio)
+            saturacaoporbases = float(saturacaoporbases)
+            maxsatu = float(maxsatu)
+            chis = float(chis)
+            prem = float(prem)
 
-        necessidade_de_calagem = str(guarconi_e_sobreira(calcio, magnesio, potassio, sodio, aluminio, hidrogeniomaisaluminio,
-                                                     saturacaoporbases, maxsatu, chis, argila_n, prem_n))
+            necessidade_de_calagem = str(guarconi_e_sobreira(calcio, magnesio, potassio, sodio, aluminio, hidrogeniomaisaluminio,
+                                                         saturacaoporbases, maxsatu, chis, argila, prem))
+
+            quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
+
+            resultado_gc = str(
+                'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
+                't/ha.')
+
+            complemento = str('O próximo passo é clicar no botão abaixo para calcular a quantidade de calcário segundo o '
+                              'tipo de aplicação e o PRNT do calcário')
+
+            return render_template('page04_bt.html', resultado_gc=resultado_gc, complemento=complemento)
+
+@app.route('/page_berco', methods = ['POST'])
+def page_berco():
+    #INPUT
+    nc = request.form['nc']
+    pf = request.form['pf']
+    lg = request.form['lg']
+    cp = request.form['cp']
+    prnt = request.form['prnt']
+
+    # OUTPUT
+    if (nc == '' or pf == '' or lg == '' or cp == '' or prnt == ''):
+        resultado_berco = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número")
+        return render_template('page06.html', resultado_berco=resultado_berco)
+
+    else:
+        nc = nc.replace(',', '.')
+        pf = pf.replace(',', '.')
+        lg = lg.replace(',', '.')
+        cp = cp.replace(',', '.')
+        prnt = prnt.replace(',', '.')
+
+        nc = float(nc)
+        pf = float(pf)
+        lg = float(lg)
+        cp = float(cp)
+        prnt = float(prnt)
+
+
+        necessidade_de_calagem = str(por_berco(nc, pf, lg, cp, prnt))
 
         quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
-        resultado_gc = str(
-            'Considerando uma aplicação em área total, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
+        resultado_berco = str(
+            'Considerando uma aplicação em cova a quantidade de calcário a ser aplicada é igual à '
+            + quantidade_de_calagem + ' '
+            'g/cova.')
+
+        return render_template('page06.html', resultado_berco=resultado_berco)
+
+@app.route('/page_sulco', methods = ['POST'])
+def page_sulco():
+    #INPUT
+    nc = request.form['nc']
+    pf = request.form['pf']
+    lg = request.form['lg']
+    ep = request.form['ep']
+    prnt = request.form['prnt']
+
+    # OUTPUT
+    if (nc == '' or pf == '' or lg == '' or ep == '' or prnt == ''):
+        resultado_sulco = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número")
+        return render_template('page07.html', resultado_sulco=resultado_sulco)
+
+    else:
+        nc = nc.replace(',', '.')
+        pf = pf.replace(',', '.')
+        lg = lg.replace(',', '.')
+        ep = ep.replace(',', '.')
+        prnt = prnt.replace(',', '.')
+
+
+
+        nc = float(nc)
+        pf = float(pf)
+        lg = float(lg)
+        ep = float(ep)
+        prnt = float(prnt)
+
+
+        necessidade_de_calagem = str(por_sulco(nc, pf, lg, ep, prnt))
+
+        quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
+
+        resultado_sulco = str(
+            'Considerando uma aplicação em sulco a quantidade de calcário a ser aplicada é igual à '
+            + quantidade_de_calagem + ' '
+            'g/m de sulco.')
+
+        return render_template('page07.html', resultado_sulco=resultado_sulco)
+
+@app.route('/page_planta', methods = ['POST'])
+def page_planta():
+    #INPUT
+    nc = request.form['nc']
+    pf = request.form['pf']
+    el = request.form['el']
+    ep = request.form['ep']
+    sp = request.form['sp']
+    prnt = request.form['prnt']
+
+    # OUTPUT
+    if (nc == '' or pf == '' or el == '' or ep == '' or sp == '' or prnt == ''):
+        resultado_planta = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número")
+        return render_template('page08.html', resultado_planta=resultado_planta)
+
+    else:
+        nc = nc.replace(',', '.')
+        pf = pf.replace(',', '.')
+        el = el.replace(',', '.')
+        ep = ep.replace(',', '.')
+        sp = sp.replace(',', '.')
+        prnt = prnt.replace(',', '.')
+
+
+
+        nc = float(nc)
+        pf = float(pf)
+        el = float(el)
+        ep = float(ep)
+        sp = float(sp)
+        prnt = float(prnt)
+
+
+        necessidade_de_calagem = str(por_planta(nc, pf, el, ep, sp, prnt))
+
+        quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
+
+        resultado_planta = str(
+            'Considerando uma aplicação na projeção da copa planta a quantidade de calcário a ser aplicada é igual à '
+            + quantidade_de_calagem + ' '
+            'g/planta.')
+
+        return render_template('page08.html', resultado_planta = resultado_planta)
+
+@app.route('/page_area_total', methods = ['POST'])
+def page_area_total():
+    #INPUT
+    nc = request.form['nc']
+    pf = request.form['pf']
+    prnt = request.form['prnt']
+
+    # OUTPUT
+    if (nc == '' or pf == '' or prnt == ''):
+        resultado_area_total = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número")
+        return render_template('page09.html', resultado_area_total = resultado_area_total)
+
+    else:
+        nc = nc.replace(',', '.')
+        pf = pf.replace(',', '.')
+        prnt = prnt.replace(',', '.')
+
+        nc = float(nc)
+        pf = float(pf)
+        prnt = float(prnt)
+
+        necessidade_de_calagem = str(por_planta(nc, pf, prnt))
+
+        quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
+
+        resultado_area_total = str(
+            'Considerando uma aplicação em area total a quantidade de calcário a ser aplicada é igual à '
+            + quantidade_de_calagem + ' '
             't/ha.')
 
-        complemento = str('O cálculo final da quantidade de calcário ainda deve levar em conta o '
-                   'tipo de aplicação - que pode ser em sulco, na projeção da copa da planta, área total ou cova - '
-                   ' a profundidade de aplicação e o PRNT do calcário que será utilizado.')
-
-        return render_template('page04.html', resultado_gc=resultado_gc, complemento=complemento)
+        return render_template('page09.html', resultado_area_total=resultado_area_total)
 
 if (__name__ == '__main__'):
     app.run(debug=True)
+

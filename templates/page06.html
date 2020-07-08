@@ -26,7 +26,6 @@
 
           </div>
 
-
         </div>
 
     </nav>
@@ -44,31 +43,22 @@
 
         <div class="row mt-5"></div>
 
-        <a href="/necessidade" class="btn btn-info" role="button">Escolher Outro Método</a>
+        <a href="/quantidade" class="btn btn-info" role="button">Escolher Outro Método</a>
 
         <div class="row mt-5"></div>
 
-        <h3>Neutralização do Alúminio e Elevação do Ca + Mg (CFSEMG, 1989)</h3>
-        <h3>NC (t/ha) = Y * Al<sup>3+</sup> + [X - (Ca<sup>2+</sup>+Mg<sup>2+</sup>)] </h3>
-
-        <div class="row mt-5"></div>
-
-        <div class="row" >
-              <a href="/tabela" class="btn btn-info" role="button">Para acesar a tabela de dados, clique aqui</a>
-        </div>
+        <h3>Quantidade de calcário por cova</h3>
 
         <div class="row mt-3"></div>
 
-        <p class="lead">Para calcular a necessidade de calagem para o seu projeto preencha os campos abaixo</p>
+        <p class="lead">Para calcular a quantidade de calcário necessária para o seu projeto preencha os campos abaixo</p>
       </div>
     </div>
-
-
 
   <div>
 
     <div class="container" align="center">
-      <form action="{{ url_for('page_al') }}" id = "entrada-dados-al" method="POST">
+      <form action="{{ url_for('page_berco') }}" id = "entrada-dados-berco" method="POST">
 
         <div class="row mt-3"></div>
         <div class="row mt-3"></div>
@@ -76,13 +66,13 @@
         <div class="row" >
           <div class="col" >
             <div class="col-md-7">
-              <label>Teor de Cálcio (cmol<sub>c</sub>/dm³)</label>
+              <label>Necessidade de Calagem (t/ha)</label>
             </div>
           </div>
 
           <div class="col">
             <div class="col-md-2">
-              <input type="text" class="form-control" name="calcio">
+              <input type="text" class="form-control" name="nc">
             </div>
           </div>
         </div>
@@ -92,13 +82,13 @@
         <div class="row">
           <div class="col">
             <div class="col-md-7">
-              <label>Teor de Magnésio (cmol<sub>c</sub>/dm³)</label>
+              <label>Profundidade da cova (cm)</label>
             </div>
           </div>
 
           <div class="col">
             <div class="col-md-2">
-              <input type="text" class="form-control" name="magnesio">
+              <input type="text" class="form-control" name="pf">
             </div>
           </div>
         </div>
@@ -108,13 +98,13 @@
         <div class="row">
           <div class="col">
             <div class="col-md-7">
-              <label>Teor de Alúminio (cmol<sub>c</sub>/dm³)</label>
+              <label>Largura da cova (cm)</label>
             </div>
           </div>
 
           <div class="col">
             <div class="col-md-2">
-              <input type="text" class="form-control" name="aluminio">
+              <input type="text" class="form-control" name="lg">
             </div>
           </div>
         </div>
@@ -124,47 +114,29 @@
         <div class="row">
           <div class="col">
             <div class="col-md-7">
-              <label>X (cmol<sub>c</sub>/dm³)</label>
+              <label>Comprimento da cova (cm)</label>
             </div>
           </div>
 
           <div class="col">
             <div class="col-md-2">
-              <input type="text" class="form-control" name="chis">
+              <input type="text" class="form-control" name="cp">
             </div>
           </div>
         </div>
 
-        <div class="row mt-5"></div>
-
-        <p class="lead">Por último preencha SOMENTE UM dos campos abaixo para estimar o valor de "Y" e clique em calcular</p>
+        <div class="row mt-3"></div>
 
         <div class="row">
           <div class="col">
             <div class="col-md-7">
-              <label>Argila (%)</label>
+              <label>PRNT do calcário (%)</label>
             </div>
           </div>
 
           <div class="col">
             <div class="col-md-2">
-              <input type="text" class="form-control" name="argila">
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-5"></div>
-
-        <div class="row">
-          <div class="col">
-            <div class="col-md-7">
-              <label>P-remanescente (mg/dm³)</label>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col-md-2">
-              <input type="text" class="form-control" name="prem">
+              <input type="text" class="form-control" name="prnt">
             </div>
           </div>
         </div>
@@ -175,13 +147,14 @@
 
         <div class="row mt-5"></div>
 
+
       </form>
 
-      {% if resultado_al != null %}
+      {% if resultado_berco != null %}
       <div class="jumbotron text-center resultado">
         <div class="container">
           <h2>Resultado</h2>
-          <h1>{{ resultado_al }}</h1>
+          <h1>{{ resultado_berco }}</h1>
           <h2>{{ complemento }}</h2>
         </div>
       </div>

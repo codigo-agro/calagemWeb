@@ -26,7 +26,6 @@
 
           </div>
 
-
         </div>
 
     </nav>
@@ -48,8 +47,11 @@
 
         <div class="row mt-5"></div>
 
-        <h3>Neutralização do Alúminio e Elevação do Ca + Mg (CFSEMG, 1989)</h3>
-        <h3>NC (t/ha) = Y * Al<sup>3+</sup> + [X - (Ca<sup>2+</sup>+Mg<sup>2+</sup>)] </h3>
+        <h3>Algoritmo de Guarçoni, Alvarez e Camilo (2007)</h3>
+
+        <div class="row mt-5"></div>
+
+        <a href="/page05" class="btn btn-info" role="button">Clique aqui para saber mais sobre o método</a>
 
         <div class="row mt-5"></div>
 
@@ -63,12 +65,10 @@
       </div>
     </div>
 
-
-
   <div>
 
     <div class="container" align="center">
-      <form action="{{ url_for('page_al') }}" id = "entrada-dados-al" method="POST">
+      <form action="{{ url_for('page_gc') }}" id = "entrada-dados-gc" method="POST">
 
         <div class="row mt-3"></div>
         <div class="row mt-3"></div>
@@ -108,6 +108,38 @@
         <div class="row">
           <div class="col">
             <div class="col-md-7">
+              <label>Teor de Potássio (mg/dm³)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="potassio">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
+              <label>Teor de Sódio (mg/dm³)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="sodio">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
               <label>Teor de Alúminio (cmol<sub>c</sub>/dm³)</label>
             </div>
           </div>
@@ -115,6 +147,54 @@
           <div class="col">
             <div class="col-md-2">
               <input type="text" class="form-control" name="aluminio">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
+              <label>Teor de H+Al (cmol<sub>c</sub>/dm³)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="hidrogenio-mais-aluminio">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
+              <label>Saturação por bases (V<sub>2</sub>) (%)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="saturacao-por-bases">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3"></div>
+
+        <div class="row">
+          <div class="col">
+            <div class="col-md-7">
+              <label>m<sub>t</sub> (%)</label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="col-md-2">
+              <input type="text" class="form-control" name="maxima-sat-aluminio">
             </div>
           </div>
         </div>
@@ -175,18 +255,20 @@
 
         <div class="row mt-5"></div>
 
+
       </form>
 
-      {% if resultado_al != null %}
+      {% if resultado_gc != null %}
       <div class="jumbotron text-center resultado">
         <div class="container">
           <h2>Resultado</h2>
-          <h1>{{ resultado_al }}</h1>
+          <h1>{{ resultado_gc }}</h1>
           <h2>{{ complemento }}</h2>
         </div>
       </div>
+      <a href="/quantidade" class="btn btn-info" role="button">Passo 02 - Quantidade de calcário</a>
+      <div class="row mt-5"></div>
       {% endif %}
-
 
     </div>
 
