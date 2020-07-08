@@ -475,7 +475,7 @@ def page_planta():
         quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
         resultado_planta = str(
-            'Considerando uma aplicação na projeção da copa planta a quantidade de calcário a ser aplicada é igual à '
+            'Considerando uma aplicação na projeção da copa da planta a quantidade de calcário a ser aplicada é igual à '
             + quantidade_de_calagem + ' '
             'g/planta.')
 
@@ -502,7 +502,7 @@ def page_area_total():
         pf = float(pf)
         prnt = float(prnt)
 
-        necessidade_de_calagem = str(por_planta(nc, pf, prnt))
+        necessidade_de_calagem = str(area_total(nc, pf, prnt))
 
         quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
