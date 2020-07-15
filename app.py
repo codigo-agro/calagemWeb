@@ -4,61 +4,93 @@ from functions import *
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+
 @app.route('/home')
 def home():
     return render_template('home.html')
+
 
 @app.route('/quantidade')
 def quantidade():
     return render_template('quantidade.html')
 
+
 @app.route('/necessidade')
 def necessidade():
     return render_template('necessidade.html')
+
 
 @app.route('/page01')
 def page01():
     return render_template('page01.html')
 
+
 @app.route('/page02')
 def page02():
     return render_template('page02.html')
+
 
 @app.route('/page03')
 def page03():
     return render_template('page03.html')
 
+
 @app.route('/page04')
 def page04():
     return render_template('page04.html')
+
 
 @app.route('/page05')
 def page05():
     return render_template('page05.html')
 
+
 @app.route('/page06')
 def page06():
     return render_template('page06.html')
+
 
 @app.route('/page07')
 def page07():
     return render_template('page07.html')
 
+
 @app.route('/page08')
 def page08():
     return render_template('page08.html')
+
 
 @app.route('/page09')
 def page09():
     return render_template('page09.html')
 
+
+@app.route('/page10')
+def page10():
+    return render_template('page10.html')
+
+
+@app.route('/page11')
+def page11():
+    return render_template('page11.html')
+
+@app.route('/page12')
+def page12():
+    return render_template('page12.html')
+
+@app.route('/page13')
+def page13():
+    return render_template('page13.html')
+
+
 @app.route('/tabela')
 def tabela():
     return render_template('tabela.html')
 
-@app.route('/send.data', methods = ['POST'])
+
+@app.route('/send.data', methods=['POST'])
 def send_data():
-    #INPUT
+    # INPUT
     calcio = request.form['calcio']
     magnesio = request.form['magnesio']
     potassio = request.form['potassio']
@@ -88,23 +120,23 @@ def send_data():
         saturacaoporbases = float(saturacaoporbases)
 
         necessidade_de_calagem = str(calcula_sb(calcio, magnesio, potassio, sodio,
-                                                                    hidrogeniomaisaluminio,
-                                                                    saturacaoporbases))
+                                                hidrogeniomaisaluminio, saturacaoporbases))
 
         quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
         resultado_sb = str(
-            'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
-            't/ha.')
+            'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual à '
+            + quantidade_de_calagem + 't/ha.')
 
         complemento = str('O próximo passo é clicar no botão abaixo para calcular a quantidade de calcário segundo o '
                           'tipo de aplicação e o PRNT do calcário')
 
         return render_template('page01_bt.html', resultado_sb=resultado_sb, complemento=complemento)
 
-@app.route('/page.al', methods = ['POST'])
+
+@app.route('/page.al', methods=['POST'])
 def page_al():
-    #INPUT
+    # INPUT
     calcio = request.form['calcio']
     magnesio = request.form['magnesio']
     aluminio = request.form['aluminio']
@@ -136,8 +168,8 @@ def page_al():
             quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
             resultado_al = str(
-                'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual à ' + quantidade_de_calagem + ' '
-                                                                                                                                                      't/ha.')
+                'Considerando uma aplicação em área total, numa profundidade de 20 cm, a necessidade de calagem é igual '
+                'à ' + quantidade_de_calagem + 't/ha.')
 
             complemento = str(
                 'O próximo passo é clicar no botão abaixo para calcular a quantidade de calcário segundo o '
@@ -211,7 +243,7 @@ def page_alm():
             argila = float(argila)
 
             necessidade_de_calagem = str(
-                calcula_alm(calcio, magnesio, potassio, sodio, aluminio, maxsatu, chis, argila, prem))
+                calcula_alm(calcio, magnesio, potassio, sodio, aluminio, maxsatu, chis, prem, argila))
 
             quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
@@ -244,7 +276,7 @@ def page_alm():
             chis = float(chis)
             prem = float(prem)
 
-            necessidade_de_calagem = str(calcula_alm(calcio, magnesio,potassio, sodio, aluminio, maxsatu, chis, argila, prem))
+            necessidade_de_calagem = str(calcula_alm(calcio, magnesio,potassio, sodio, aluminio, maxsatu, chis,  prem, argila))
 
             quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
@@ -306,7 +338,7 @@ def page_gc():
 
             necessidade_de_calagem = str(
                 guarconi_e_sobreira(calcio, magnesio, potassio, sodio, aluminio, hidrogeniomaisaluminio,
-                                    saturacaoporbases, maxsatu, chis, argila, prem))
+                                    saturacaoporbases, maxsatu, chis, prem, argila))
 
             quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 
@@ -344,7 +376,7 @@ def page_gc():
             prem = float(prem)
 
             necessidade_de_calagem = str(guarconi_e_sobreira(calcio, magnesio, potassio, sodio, aluminio, hidrogeniomaisaluminio,
-                                                         saturacaoporbases, maxsatu, chis, argila, prem))
+                                                         saturacaoporbases, maxsatu, chis, prem, argila))
 
             quantidade_de_calagem = necessidade_de_calagem.replace('.', ',')
 

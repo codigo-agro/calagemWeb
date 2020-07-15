@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+      <!-- CSS Customizado -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Calagem Web</title>
+    <link rel="shortcut icon" href="/static/images/CalagemWeb.png">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4e2306;">
+
+        <div class="container" align="center">
+          <div class="col" >
+            <div class="row" >
+              <a class="nav-brand" href="/home" ><img class="center" src="/static/images/CalagemWeb.png" ></a>
+            </div>
+
+          </div>
+
+
+        </div>
+
+    </nav>
+
+    <div class="row mt-3"></div>
+
+    <div class ="jumbotrom text-center apresentacao" >
+      <div class="container">
+
+        <h3>Calagem Web<a name="topo"></a></h3>
+
+        <div class="row mt-5"></div>
+
+        <a href="/home" class="btn btn-info" role="button">Voltar à página inicial</a>
+
+        <div class="row mt-5"></div>
+
+        <a href="/quantidade" class="btn btn-info" role="button">Escolher outro Método</a>
+
+        <div class="row mt-5"></div>
+
+        <a href="/page07" class="btn btn-info" role="button">Voltar ao cálculo</a>
+
+        <div class="row mt-5"></div>
+
+        <h3>Detalhes sobre os cálculos para quantidade de calcário em sulco</h3>
+
+        <div class="row mt-5"></div>
+
+         <p class="lead" align="justify"><u>Dados de entrada</u></p>
+
+        <p class="lead" align="justify"><u>Necessidade de calagem (t/ha)</u>: é o valor obtido por um dos métodos de cálculo
+          para necesssidade de calagem. Este valor obtido aqui no Calagem Web corresponde ao valor para a aplicação
+          em área total considerando uma profundidade de incorporação de 20 cm.</p>
+
+        <p class="lead" align="justify"> <u>Profundidade</u> e  <u>largura do sulco</u>: são as dimensões de abertura do
+          sulco ao se imaginar a ele sendo construída no formato de uma caixa triangular.</p>
+
+        <a class="nav-brand" href="http://daniloas.com/" target="_blank" ><img class="center" src="/static/images/sulco.png" style="width:50%"></a>
+
+        <p class="lead" align="justify"><u>Espaçamento entre linhas</u> (m): O espaçamento entre linhas de plantio é
+        utilizado para estimar o total de linhas dentro de 1 hectare e assim obter o comprimento total de sulco que 1
+        ha possui.</p>
+
+        <p class="lead" align="justify"><u>PRNT</u> (%): É o valor do poder relativo neutralizante do calcário a ser utilizado.
+          Este valor é obtido é obtido em laboratório, para cada lote de calcário e pode ser consultado nos rótulos das
+          embalagens dos sacos de calcário.</p>
+
+        <p class="lead" align="justify"><u>Exemplo de dados</u></p>
+
+        <p class="lead" align="justify">Necessidade de calagem: 2,03 t/ha</p>
+        <p class="lead" align="justify">Profundidade do sulco: 40 cm</p>
+        <p class="lead" align="justify">Largura do sulco: 30 cm</p>
+        <p class="lead" align="justify">Espaçamento entre linhas: 2 m</p>
+        <p class="lead" align="justify">PRNT do calcário: 90%</p>
+
+        <p class="lead" align="justify"><u>Cálculos</u></p>
+
+        <p class="lead" align="justify">Total de linhas em 1 hectare</p>
+
+        <p class="lead" align="justify">Sabendo-se que 1 hectare poder ser um quadro de 100 m x 100 m, dividiremos
+        um dos lados desse hectare pelo espaçamento entre linha</p>
+
+        <p class="lead" align="center">Total de linhas: 100 m / 2 m = 50 linhas de 100 m ou:</p>
+
+        <p class="lead" align="center">Comprimento total de sulco em 1 ha: 50 linhas * 100 m = 5000 m de sulco</p>
+
+        <p class="lead" align="justify">Multiplicando a largura e a profundidade do sulco e dividindo por 2, obteremos
+          a área do triangulo. Logo após isso multiplicamos pelo comprimento total de sulco e então obteremos o volume
+        total de sulco</p>
+
+        <p class="lead" align="center">Área do triângulo: (30 * 40)/2 = 600 cm² de sulco ou </p>
+        <p class="lead" align="center">Volume de sulco: 600 cm² * 500.000 cm = 300.000.000 cm³</p>
+        <p class="lead" align="center">Volume por metro de sulco: 300.000.000 cm³/5000 m = 60.000 cm³</p>
+
+        <p class="lead" align="justify">Os valores de necessidade de calagem são então corrigidos para valores
+          expresoss em g/m de sulco, ou seja, considerando o volume de solo para metro de sulco. Sabendo-se que em 20 cm de
+        profundidade, 1 ha possui 2 trilhões de cm³, e em metro de sulco de dimensões 40 cm x 30 cm x 100 cm possui
+          600.000cm³, então:</p>
+
+        <p class="lead" align="center"> 2,03 t -------- 2.000.000.000 cm³</p>
+        <p class="lead" align="center">    x t -------- 60.000 cm³</p>
+        <p class="lead" align="center">         x = NC = 0,0000609 t/m de sulco </p>
+        <p class="lead" align="justify">Multiplicamos "x" por 1 milhão para transformar t/metro de sulco para g/m de
+          sulco  </p>
+        <p class="lead" align="center">         x = NC = 0.000609 * 1.000.000 = 60,9 g/m de sulco </p>
+
+        <p class="lead" align="justify">Por fim a quantidade de calcário é corrigida em função do PRNT </p>
+
+        <p class="lead" align="center">QC = 60,9 * (100/PRNT) </p>
+        <p class="lead" align="center">QC = 60,9 * (100/90) </p>
+        <p class="lead" align="center">QC =  67,67 g/m de sulco </p>
+
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+
+<hr class="style1">
+<footer>
+
+  <center>
+      <div class="col">
+        <a href="#topo" class="btn btn-info" role="button">Voltar ao topo</a>
+      </div>
+  </center>
+  <center>
+  <p class="lead">Desenvolvido por</p>
+  </center>
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <a class="nav-brand" href="http://codigoagro.com/" target="_blank" ><img class="center" src="/static/images/codigoagro.png" style="width:100%"></a>
+    </div>
+    <div class="col">
+      <a class="nav-brand" href="http://daniloas.com/" target="_blank" ><img class="center" src="/static/images/daniloas.png" style="width:50%"></a>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+  <div class="row mt-5"></div>
+</footer>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+      <!-- CSS Customizado -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Calagem Web</title>
+    <link rel="shortcut icon" href="/static/images/CalagemWeb.png">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4e2306;">
+
+        <div class="container" align="center">
+          <div class="col" >
+            <div class="row" >
+              <a class="nav-brand" href="/home" ><img class="center" src="/static/images/CalagemWeb.png" ></a>
+            </div>
+
+          </div>
+
+
+        </div>
+
+    </nav>
+
+    <div class="row mt-3"></div>
+
+    <div class ="jumbotrom text-center apresentacao" >
+      <div class="container">
+
+        <h3>Calagem Web<a name="topo"></a></h3>
+
+        <div class="row mt-5"></div>
+
+        <a href="/home" class="btn btn-info" role="button">Voltar à página inicial</a>
+
+        <div class="row mt-5"></div>
+
+        <a href="/quantidade" class="btn btn-info" role="button">Escolher outro Método</a>
+
+        <div class="row mt-5"></div>
+
+        <a href="/page08" class="btn btn-info" role="button">Voltar ao cálculo</a>
+
+        <div class="row mt-5"></div>
+
+        <h3>Detalhes sobre os cálculos para quantidade de calcário por planta</h3>
+
+        <div class="row mt-5"></div>
+
+         <p class="lead" align="justify"><u>Dados de entrada</u></p>
+
+        <p class="lead" align="justify"><u>Necessidade de calagem (t/ha)</u>: é o valor obtido por um dos métodos de cálculo
+          para necesssidade de calagem. Este valor obtido aqui no Calagem Web corresponde ao valor para a aplicação
+          em área total considerando uma profundidade de incorporação de 20 cm.</p>
+
+        <p class="lead" align="justify"> <u>Profundidade de movimentação do calcário</u>: É um valor que deve ser estimado
+          Pois quando o cultivo já está estabelecido o calcário é aplicado superficialmente sem contudo ser incorado
+          mecânicamente em camada mais profundas do solo. Neste caso, de aplicação superficial, o calcário ainda pode
+          se movimentar verticamente, podendo assim reagir nos primeiros centimetros de solo. Esse valor pode varia para
+          algo entre 5 e 10 cm, ou ainda para profundidades maiores ou menores, à depender das propriedades do solo.</p>
+
+        <p class="lead" align="justify"> <u>Espaçamento entre plantas</u> e  <u>Espaçamento entre linhas</u>: São as
+          distâncias entre as plantas e entre as linhas de plantio.</p>
+
+        <a class="nav-brand" href="http://daniloas.com/" target="_blank" ><img class="center" src="/static/images/planta.png" style="width:40%"></a>
+
+        <p class="lead" align="justify"> <u>Estimativa de superfície coberta pela copa das plantas</u> (%): O calcário será
+          aplicado somente na projeção da copa das plantas. Sendo assim, deve-se estimar qual a percentagem que as copas
+        das plantas cobrem dentro de 1 ha. Ou seja, quanto mais adensado for o cultivo, maior será este valor em percentagem.</p>
+
+        <p class="lead" align="justify"><u>PRNT</u> (%): É o valor do poder relativo neutralizante do calcário a ser utilizado.
+          Este valor é obtido em laboratório, para cada lote de calcário e pode ser consultado nos rótulos das
+          embalagens dos sacos de calcário.</p>
+
+        <p class="lead" align="justify"><u>Exemplo de dados</u></p>
+
+        <p class="lead" align="justify">Necessidade de Calagem: 2,03 t/ha</p>
+        <p class="lead" align="justify">Profundidade de movimentação do calcário: 7 cm = 0,07 m</p>
+        <p class="lead" align="justify">Espaçamento entre plantas: 2 m</p>
+        <p class="lead" align="justify">Espaçamento entre linhas: 3 m</p>
+        <p class="lead" align="justify">Estimativa de superficie coberta pela copa das plantas: 50%</p>
+        <p class="lead" align="justify">PRNT do calcário: 90%</p>
+
+        <p class="lead" align="justify"><u>Cálculos</u></p>
+
+        <p class="lead" align="justify">O técnico responsável estimou que o calcário, aplicado superficialmente, irá
+        se movimentar verticalmente em torno de 7 cm. A partir dessa informações vamos descobrir primeiro o volume de
+          solo para 1 ha nesta profundidade:</p>
+
+        <p class="lead" align="center">Volume de solo em 1 ha = 100 m * 100 m * 0,07 m =  700 m³</p>
+
+        <p class="lead" align="justify">Os valores de necessidade de calagem (inicialmente calculados considerando
+          uma profundidade de 20 cm. São então corrigidos para valores segundo a profundidade de 7 cm, ou seja:</p>
+
+        <p class="lead" align="center"> 2,03 t -------- 2000 m³</p>
+        <p class="lead" align="center">    x t --------  700 m³</p>
+        <p class="lead" align="center">         x = 0,7105 t/ha </p>
+
+        <p class="lead" align="justify">Sabemos, também, que o calcário será aplicado apenas na projeção da copa das
+        plantas e foi informado que a copa das plantas cobrem cerca de 50 % do terreno. Faremos então a correção:</p>
+
+        <p class="lead" align="center">QC = 0,7105 * (50/100) </p>
+        <p class="lead" align="center">QC =  0,35525 t/ha </p>
+
+        <p class="lead" align="justify">Agora este valor precisa ser dividido pelo número de planta em 1 ha. Vamos então
+         descrobrir o total de plantas em 1 ha:</p>
+
+        <p class="lead" align="center">Nº de plantas = 10000 m² / (Espçamente entre plantas * Espaçamento entre linhas)</p>
+        <p class="lead" align="center">Nº de plantas = 10000 m² / (2 m *  3 m)</p>
+
+        <p class="lead" align="justify">Dividiremos a quantidade de calcário pelo total de plantas, para obtermos
+          a QC em t/planta e então multiplicaremos por 1.000.000 para transformar em g/planta:</p>
+
+        <p class="lead" align="center">QC = 0,35525 / 1.666,67</p>
+        <p class="lead" align="center">QC = (0,35525 / 1.666,67) * 1.000.000</p>
+        <p class="lead" align="center">QC = 213,15 g/planta</p>
+
+        <p class="lead" align="justify">Faremos uma ultima correção segundo o PRNT do calcário a ser utilizado:</p>
+
+        <p class="lead" align="center">QC = 213,15 * (100/PRNT)</p>
+        <p class="lead" align="center">QC = 213,15 * (100/90)</p>
+        <p class="lead" align="center">QC =  236,83 g/planta </p>
+
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+
+<hr class="style1">
+<footer>
+
+  <center>
+      <div class="col">
+        <a href="#topo" class="btn btn-info" role="button">Voltar ao topo</a>
+      </div>
+  </center>
+  <center>
+  <p class="lead">Desenvolvido por</p>
+  </center>
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <a class="nav-brand" href="http://codigoagro.com/" target="_blank" ><img class="center" src="/static/images/codigoagro.png" style="width:100%"></a>
+    </div>
+    <div class="col">
+      <a class="nav-brand" href="http://daniloas.com/" target="_blank" ><img class="center" src="/static/images/daniloas.png" style="width:50%"></a>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+  <div class="row mt-5"></div>
+</footer>
+</html>

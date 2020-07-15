@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+      <!-- CSS Customizado -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+    <title>Calagem Web</title>
+    <link rel="shortcut icon" href="/static/images/CalagemWeb.png">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4e2306;">
+
+        <div class="container" align="center">
+          <div class="col" >
+            <div class="row" >
+              <a class="nav-brand" href="/home" ><img class="center" src="/static/images/CalagemWeb.png" ></a>
+            </div>
+
+          </div>
+
+
+        </div>
+
+    </nav>
+
+    <div class="row mt-3"></div>
+
+    <div class ="jumbotrom text-center apresentacao" >
+      <div class="container">
+
+        <h3>Calagem Web<a name="topo"></a></h3>
+
+        <div class="row mt-5"></div>
+
+        <a href="/home" class="btn btn-info" role="button">Voltar à página inicial</a>
+
+        <div class="row mt-5"></div>
+
+        <a href="/quantidade" class="btn btn-info" role="button">Escolher outro Método</a>
+
+        <div class="row mt-5"></div>
+
+        <a href="/page06" class="btn btn-info" role="button">Voltar ao cálculo</a>
+
+        <div class="row mt-5"></div>
+
+        <h3>Detalhes sobre os cálculos para quantidade de calcário em cova</h3>
+
+        <div class="row mt-5"></div>
+
+         <p class="lead" align="justify"><u>Dados de entrada</u></p>
+
+        <p class="lead" align="justify"><u>Necessidade de calagem (t/ha)</u>: é o valor obtido por um dos métodos de cálculo
+          para necesssidade de calagem. Este valor obtido aqui no Calagem Web corresponde ao valor para a aplicação
+          em área total considerando uma profundidade de incorporação de 20 cm.</p>
+
+        <p class="lead" align="justify"> <u>Profundidade</u>, <u>largura</u> e <u>comprimento da cova</u>: são as dimensões da cova ao se
+          imaginar a ela sendo construída no formato de uma caixa.</p>
+
+        <a class="nav-brand" href="http://daniloas.com/" target="_blank" ><img class="center" src="/static/images/berco.png" style="width:20%"></a>
+
+        <p class="lead" align="justify"><u>PRNT</u> (%): É o valor do poder relativo neutralizante do calcário a ser utilizado.
+          Este valor é obtido é obtido em laboratório, para cada lote de calcário e pode ser consultado nos rótulos das
+          embalagens dos sacos de calcário.</p>
+
+        <p class="lead" align="justify"><u>Exemplo de dados</u></p>
+
+        <p class="lead" align="justify">Necessidade de Calagem: 2,03 t/ha</p>
+        <p class="lead" align="justify">Profundidade da cova: 40 cm</p>
+        <p class="lead" align="justify">Largura da cova: 40 cm</p>
+        <p class="lead" align="justify">Comprimento da cova: 40 cm</p>
+        <p class="lead" align="justify">PRNT do calcário: 90%</p>
+
+        <p class="lead" align="justify"><u>Cálculos</u></p>
+
+        <p class="lead" align="justify">Os valores de necessidade de calagem são então corrigidos para valores
+          expresoss em g/cova, ou seja, considerando o volume de solo para cada cova. Sabendo-se que em 20 cm de
+        profundidade, 1 ha possui 2 trilhões de cm³, e uma cova de dimensões 40 cm x 40 cm x 40 cm possui cm³, então:</p>
+
+        <p class="lead" align="center"> 2,03 t -------- 2.000.000.000 cm³</p>
+        <p class="lead" align="center">    x t -------- (40 x 40 x 40) cm³</p>
+        <p class="lead" align="center">         x = 0.00006496 t/cova </p>
+        <p class="lead" align="justify">Multiplicamos "x" por 1 milhão para transformar t/cova para g/cova  </p>
+        <p class="lead" align="center">        NC = 0.00006496 * 1.000.000 = 64,96 g/cova </p>
+
+        <p class="lead" align="justify">Por fim a quantidade de calcário é corrigida em função do PRNT </p>
+
+        <p class="lead" align="center">QC = 64,96 * (100/PRNT) </p>
+        <p class="lead" align="center">QC = 64,96 * (100/90) </p>
+        <p class="lead" align="center">QC =  72,18 g/cova </p>
+
+      </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+
+<hr class="style1">
+<footer>
+
+  <center>
+      <div class="col">
+        <a href="#topo" class="btn btn-info" role="button">Voltar ao topo</a>
+      </div>
+  </center>
+  <center>
+  <p class="lead">Desenvolvido por</p>
+  </center>
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <a class="nav-brand" href="http://codigoagro.com/" target="_blank" ><img class="center" src="/static/images/codigoagro.png" style="width:100%"></a>
+    </div>
+    <div class="col">
+      <a class="nav-brand" href="http://daniloas.com/" target="_blank" ><img class="center" src="/static/images/daniloas.png" style="width:50%"></a>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+  <div class="row mt-5"></div>
+</footer>
+</html>

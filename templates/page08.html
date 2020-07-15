@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/static/css/style.css">
 
     <title>Calagem Web</title>
-    <link rel="shortcut icon" href="/static/images/favicon.png">
+    <link rel="shortcut icon" href="/static/images/CalagemWeb.png">
   </head>
   <body>
 
@@ -21,7 +21,7 @@
         <div class="container" align="center">
           <div class="col" >
             <div class="row" >
-              <a class="nav-brand" href="/home" ><img class="center" src="/static/images/favicon.png" ></a>
+              <a class="nav-brand" href="/home" ><img class="center" src="/static/images/CalagemWeb.png" ></a>
             </div>
 
           </div>
@@ -43,13 +43,27 @@
 
         <div class="row mt-5"></div>
 
-        <a href="/quantidade" class="btn btn-info" role="button">Escolher Outro Método</a>
+        <a href="/quantidade" class="btn btn-info" role="button">Escolher outro Método</a>
 
         <div class="row mt-5"></div>
 
         <h3>Quantidade de calcário por planta</h3>
 
-        <div class="row mt-3"></div>
+        {% if resultado_planta != null %}
+        <div class="jumbotron text-center resultado">
+          <div class="container">
+            <h2>Resultado</h2>
+            <h1>{{ resultado_planta }}</h1>
+            <h2>{{ complemento }}</h2>
+          </div>
+        </div>
+        {% endif %}
+
+        <div class="row mt-5"></div>
+
+        <a href="/page12" class="btn btn-info" role="button">Clique aqui para saber mais sobre o método</a>
+
+        <div class="row mt-5"></div>
 
         <p class="lead">Para calcular a quantidade de calcário necessária para o seu projeto preencha os campos abaixo</p>
       </div>
@@ -82,7 +96,7 @@
         <div class="row">
           <div class="col">
             <div class="col-md-7">
-              <label>Profundidade de aprofundamento do calcário (cm)</label>
+              <label>Profundidade de movimentação do calcário (cm)</label>
             </div>
           </div>
 
@@ -163,19 +177,7 @@
 
         <div class="row mt-5"></div>
 
-
       </form>
-
-      {% if resultado_planta != null %}
-      <div class="jumbotron text-center resultado">
-        <div class="container">
-          <h2>Resultado</h2>
-          <h1>{{ resultado_planta }}</h1>
-          <h2>{{ complemento }}</h2>
-        </div>
-      </div>
-      {% endif %}
-
 
     </div>
 

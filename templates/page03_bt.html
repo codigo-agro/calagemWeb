@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/static/css/style.css">
 
     <title>Calagem Web</title>
-    <link rel="shortcut icon" href="/static/images/favicon.png">
+    <link rel="shortcut icon" href="/static/images/CalagemWeb.png">
 
   </head>
   <body>
@@ -44,14 +44,24 @@
 
         <div class="row mt-5"></div>
 
-        <a href="/necessidade" class="btn btn-info" role="button">Escolher Outro Método</a>
+        <a href="/necessidade" class="btn btn-info" role="button">Escolher outro Método</a>
 
         <div class="row mt-5"></div>
 
-        <h3>Neutralização do Alúminio e Elevação do Ca + Mg (Alvarez V. e Ribeiro, 1999)</h3>
+        <h3>Neutralização do Alumínio e Elevação do Ca + Mg (Alvarez V. e Ribeiro, 1999)</h3>
         <h3>NC (t/ha) = Y * [Al<sup>3+</sup> - (m<sub>t</sub> * t/100)] + [X - (Ca<sup>2+</sup>+Mg<sup>2+</sup>)] </h3>
 
+        {% if resultado_alm != null %}
+        <div class="jumbotron text-center resultado">
+          <div class="container">
+            <h2>Resultado</h2>
+            <h1>{{ resultado_alm }}</h1>
+            <h2>{{ complemento }}</h2>
+          </div>
+        </div>
+        <a href="/quantidade" class="btn btn-info" role="button">Passo 02 - Quantidade de calcário</a>
         <div class="row mt-5"></div>
+        {% endif %}
 
         <div class="row" >
               <a href="/tabela" class="btn btn-info" role="button">Para acesar a tabela de dados, clique aqui</a>
@@ -223,21 +233,7 @@
 
         <div class="row mt-5"></div>
 
-
       </form>
-
-      {% if resultado_alm != null %}
-      <div class="jumbotron text-center resultado">
-        <div class="container">
-          <h2>Resultado</h2>
-          <h1>{{ resultado_alm }}</h1>
-          <h2>{{ complemento }}</h2>
-        </div>
-      </div>
-      <a href="/quantidade" class="btn btn-info" role="button">Passo 02 - Quantidade de calcário</a>
-      <div class="row mt-5"></div>
-      {% endif %}
-
 
     </div>
 

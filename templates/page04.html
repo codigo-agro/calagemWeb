@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/static/css/style.css">
 
     <title>Calagem Web</title>
-    <link rel="shortcut icon" href="/static/images/favicon.png">
+    <link rel="shortcut icon" href="/static/images/CalagemWeb.png">
   </head>
   <body>
 
@@ -21,7 +21,7 @@
         <div class="container" align="center">
           <div class="col" >
             <div class="row" >
-              <a class="nav-brand" href="/home" ><img class="center" src="/static/images/favicon.png" ></a>
+              <a class="nav-brand" href="/home" ><img class="center" src="/static/images/CalagemWeb.png" ></a>
             </div>
 
           </div>
@@ -43,13 +43,21 @@
 
         <div class="row mt-5"></div>
 
-        <a href="/necessidade" class="btn btn-info" role="button">Escolher Outro Método</a>
+        <a href="/necessidade" class="btn btn-info" role="button">Escolher outro Método</a>
 
         <div class="row mt-5"></div>
 
         <h3>Algoritmo de Guarçoni, Alvarez e Camilo (2007)</h3>
 
-        <div class="row mt-5"></div>
+        {% if resultado_gc != null %}
+        <div class="jumbotron text-center resultado">
+          <div class="container">
+            <h2>Resultado</h2>
+            <h1>{{ resultado_gc }}</h1>
+            <h2>{{ complemento }}</h2>
+          </div>
+        </div>
+        {% endif %}
 
         <a href="/page05" class="btn btn-info" role="button">Clique aqui para saber mais sobre o método</a>
 
@@ -255,19 +263,7 @@
 
         <div class="row mt-5"></div>
 
-
       </form>
-
-      {% if resultado_gc != null %}
-      <div class="jumbotron text-center resultado">
-        <div class="container">
-          <h2>Resultado</h2>
-          <h1>{{ resultado_gc }}</h1>
-          <h2>{{ complemento }}</h2>
-        </div>
-      </div>
-      {% endif %}
-
 
     </div>
 
