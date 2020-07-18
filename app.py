@@ -400,7 +400,7 @@ def page_berco():
 
     # OUTPUT
     if (nc == '' or pf == '' or lg == '' or cp == '' or prnt == ''):
-        resultado_berco = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número")
+        resultado_berco = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número diferente de zero")
         return render_template('page06.html', resultado_berco=resultado_berco)
 
     else:
@@ -439,7 +439,7 @@ def page_sulco():
 
     # OUTPUT
     if (nc == '' or pf == '' or lg == '' or ep == '' or prnt == ''):
-        resultado_sulco = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número")
+        resultado_sulco = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número diferente de zero")
         return render_template('page07.html', resultado_sulco=resultado_sulco)
 
     else:
@@ -481,7 +481,7 @@ def page_planta():
 
     # OUTPUT
     if (nc == '' or pf == '' or el == '' or ep == '' or sp == '' or prnt == ''):
-        resultado_planta = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número")
+        resultado_planta = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número diferente de zero")
         return render_template('page08.html', resultado_planta=resultado_planta)
 
     else:
@@ -522,7 +522,7 @@ def page_area_total():
 
     # OUTPUT
     if (nc == '' or pf == '' or prnt == ''):
-        resultado_area_total = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número")
+        resultado_area_total = str("Você deixou campos vazios no formulário. Tente novamente sempre digitando um número diferente de zero")
         return render_template('page09.html', resultado_area_total = resultado_area_total)
 
     else:
