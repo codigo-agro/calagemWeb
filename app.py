@@ -546,5 +546,5 @@ def page_area_total():
         return render_template('page09.html', resultado_area_total=resultado_area_total)
 
 if (__name__ == '__main__'):
-    app.run(debug=True)
+    app.run(port=8080)
 
