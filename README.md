@@ -1,7 +1,7 @@
 # Calagem Web
 
 
-![web](https://github.com/codigo-agro/calagemWeb/tree/master/static/images/github.png)
+![web](https://github.com/codigo-agro/calagemWeb/blob/master/static/images/github.png)
 
 
 **Calagem Web** é a versão web do Calagem App, uma ferramenta de cálculo e recomendação de Necessidade de calagem e Quantidade de Calcário.
