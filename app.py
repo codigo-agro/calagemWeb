@@ -74,9 +74,11 @@ def page10():
 def page11():
     return render_template('page11.html')
 
+
 @app.route('/page12')
 def page12():
     return render_template('page12.html')
+
 
 @app.route('/page13')
 def page13():
@@ -203,7 +205,8 @@ def page_al():
 
             return render_template('page02_bt.html', resultado_al=resultado_al, complemento=complemento)
 
-@app.route('/page.alm', methods = ['POST'])
+
+@app.route('/page.alm', methods=['POST'])
 def page_alm():
     #INPUT
     calcio = request.form['calcio']
@@ -290,7 +293,7 @@ def page_alm():
             return render_template('page03_bt.html', resultado_alm=resultado_alm, complemento=complemento)
 
 
-@app.route('/page.gc', methods = ['POST'])
+@app.route('/page.gc', methods=['POST'])
 def page_gc():
     #INPUT
     calcio = request.form['calcio']
@@ -389,7 +392,8 @@ def page_gc():
 
             return render_template('page04_bt.html', resultado_gc=resultado_gc, complemento=complemento)
 
-@app.route('/page_berco', methods = ['POST'])
+
+@app.route('/page_berco', methods=['POST'])
 def page_berco():
     #INPUT
     nc = request.form['nc']
@@ -428,7 +432,8 @@ def page_berco():
 
         return render_template('page06.html', resultado_berco=resultado_berco)
 
-@app.route('/page_sulco', methods = ['POST'])
+
+@app.route('/page_sulco', methods=['POST'])
 def page_sulco():
     #INPUT
     nc = request.form['nc']
@@ -450,7 +455,6 @@ def page_sulco():
         prnt = prnt.replace(',', '.')
 
 
-
         nc = float(nc)
         pf = float(pf)
         lg = float(lg)
@@ -469,7 +473,8 @@ def page_sulco():
 
         return render_template('page07.html', resultado_sulco=resultado_sulco)
 
-@app.route('/page_planta', methods = ['POST'])
+
+@app.route('/page_planta', methods=['POST'])
 def page_planta():
     #INPUT
     nc = request.form['nc']
@@ -513,7 +518,8 @@ def page_planta():
 
         return render_template('page08.html', resultado_planta = resultado_planta)
 
-@app.route('/page_area_total', methods = ['POST'])
+
+@app.route('/page_area_total', methods=['POST'])
 def page_area_total():
     #INPUT
     nc = request.form['nc']
